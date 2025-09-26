@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: wfp_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: wfp_user
+      POSTGRES_PASSWORD: wfp_pass
+      POSTGRES_DB: wfp_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
