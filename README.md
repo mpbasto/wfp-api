@@ -49,8 +49,8 @@ make activate
 ```bash
 docker-compose up -d
 ```
-This runs a local Postgres instance with the database `wfp_db`. Username and password default values are defined in the docker-compose.yml at the root of the project, and it is highly encouraged to change them before running the command above.
-- **Make sure that a .env file is created at the root of the project with the URL for the database. Using the default values in the yaml, the contents of the .env file should look like this:** `DATABASE_URL=postgresql://wfp_user:wfp_pass@localhost:5432/wfp_db`
+This runs a local Postgres instance with the database `wfp_db`. Username and password default values are defined in the `docker-compose.yml` at the root of the project, and it is highly encouraged to change them before running the command above.
+- **Make sure that a `.env` file is created at the root of the project with the URL for the database.** Using the default values in the `.yaml`, the contents of the `.env` file should look like this: `DATABASE_URL=postgresql://wfp_user:wfp_pass@localhost:5432/wfp_db`
 
 ### 5. Load CSV data
 The original .csv file was obtained through [HDX](https://data.humdata.org/dataset/global-wfp-food-prices), which updates it every month. If you want to work with the latest data, please replace the file under `data/` and update `CSV_PATH` value in `scripts/load_csv.py`.
@@ -64,7 +64,7 @@ python -m scripts.load_csv
 uvicorn app.main:app --reload
 ```
 API will be available at:
-👉http://localhost:8000
+👉 http://localhost:8000
 
 
 ---
@@ -85,4 +85,4 @@ GET /prices?market_id=3690&start_date=2025-01-01&end_date=2025-01-31
 GET /latest-prices
 ```
 
-Interactive API docs can be found at [http://localhost:8000/docs](http://localhost:8000/docs).
+Interactive API docs can be found at [http://localhost:8000/docs](http://localhost:8000/docs)
